@@ -174,7 +174,7 @@ revenue_p = -start_price_p
 revenue_a = -start_price_a
 
 # 극소 극대 판별법으로 저점매수 고점매도
-for i in range(1, len(predictions_df)-1):
+for i in range(start_idx_p, len(predictions_df)-1):
     if predictions_df.iloc[i, 1] <= 0 and predictions_df.iloc[i+1, 1] >= 0:
         revenue_p -= actual_df.iloc[i, 0]
         flag_p = 1
@@ -182,7 +182,8 @@ for i in range(1, len(predictions_df)-1):
         revenue_p += actual_df.iloc[i, 0]
         tmp_predict = revenue_p
         flag_p = 0
-    
+
+for i in range(start_idx_a, len(actual_df)-1):
     if actual_df.iloc[i, 1] <= 0 and actual_df.iloc[i+1, 1] >= 0:
         revenue_a -= actual_df.iloc[i, 0]
         flag_a = 1

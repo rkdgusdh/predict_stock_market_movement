@@ -29,6 +29,8 @@
 # 3. How to run code
 ````
 # You can run file by below command in the terminal
+# Please move the path to the folder you downloaded and unzipped by cd command
+# or right click the folder you downloaded and unzipped and select open in terminal
 
 # for running method1.py
 python method1.py
